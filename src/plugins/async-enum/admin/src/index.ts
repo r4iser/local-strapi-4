@@ -19,6 +19,23 @@ export default {
       },
     });
 
+    app.customFields.register({
+      name: 'async-enum',
+      pluginId: PLUGIN_ID,
+      type: 'string',
+      intlLabel: {
+        id: `${PLUGIN_ID}.plugin.name.field`,
+        defaultMessage: PLUGIN_ID,
+      },
+      intlDescription: {
+        id: `${PLUGIN_ID}.plugin.description.field`,
+        defaultMessage: 'Select an option from the dropdown.',
+      },
+      components: {
+        Input: () => import('./components/AsyncDropdown'),
+      },
+    });
+
     app.registerPlugin({
       id: PLUGIN_ID,
       initializer: Initializer,
