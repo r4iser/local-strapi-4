@@ -22,12 +22,14 @@ const SelectorFieldTest: React.FC = () => {
     return (
         <DesignSystemProvider locale="en-GB" theme={lightTheme}>
             <div>
-                <h2>User List</h2>
-                <ul>
+                <h2>Select a User</h2>
+                <select>
                     {users.map((user: any) => (
-                        <li key={user.id}>{user.name}</li>
+                        <option key={user.id} value={user.id}>
+                            {user.name}
+                        </option>
                     ))}
-                </ul>
+                </select>
             </div>
         </DesignSystemProvider>
     );
